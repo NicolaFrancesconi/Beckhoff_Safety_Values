@@ -25,7 +25,7 @@ These values are derived from the **linear speed or displacement** of the axis c
 
 The calculations and logic are based on the official Beckhoff manual:
 
-**SAFETY_ax5805_manuale_modulo_safety.pdf**
+[SAFETY_ax5805_manuale_modulo_safety.pdf](https://github.com/NicolaFrancesconi/Beckhoff_Safety_Values/blob/main/SAFETY_ax5805_manuale_modulo_safety.pdf)
 
 This document describes the mathematical relationships and safety function parameters used in TwinSAFE modules, including increment calculations for speed and position monitoring.
 
