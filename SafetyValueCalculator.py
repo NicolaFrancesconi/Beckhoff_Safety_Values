@@ -117,7 +117,7 @@ def toggle_mode():
         remove_transmission_widgets()
         add_numerator_denominator_widgets()
         add_encoder_widgets()
-        toggle_button.config(text="Switch to Ratio Mode")
+        toggle_button.config(text="Switch to Transmission Ratio Mode")
         calc_button.grid(row=6, column=0, columnspan=2, pady=10)
         result_label.grid(row=7, column=0, columnspan=2)
     else:
@@ -125,7 +125,7 @@ def toggle_mode():
         remove_numerator_denominator_widgets()
         remove_encoder_widgets()
         add_transmission_widgets()
-        toggle_button.config(text="Switch to Fraction Mode")
+        toggle_button.config(text="Switch to Numerator/Denominator Mode")
         calc_button.grid(row=5, column=0, columnspan=2, pady=10)
         result_label.grid(row=6, column=0, columnspan=2)
 
@@ -173,7 +173,7 @@ entry_speed.grid(row=3, column=1)
 
 mode_var = tk.StringVar(value="transmission_ratio")
 
-label_transmission = ttk.Label(root, text="Transmission Ratio:")
+label_transmission = ttk.Label(root, text="Transmission Ratio (mm/rev):")
 label_transmission.grid(row=4, column=0, sticky="e")
 entry_transmission = ttk.Entry(root)
 entry_transmission.grid(row=4, column=1)
@@ -183,7 +183,7 @@ entry_numerator = ttk.Entry(root)
 label_denominator = ttk.Label(root, text="Denominator:")
 entry_denominator = ttk.Entry(root)
 
-toggle_button = ttk.Button(root, text="Switch to Fraction Mode", command=toggle_mode)
+toggle_button = ttk.Button(root, text="Switch to Numerator/Denominator Mode", command=toggle_mode)
 toggle_button.grid(row=8, column=0, columnspan=2, pady=5)
 
 calc_button = ttk.Button(root, text="Calculate", command=calculate)
