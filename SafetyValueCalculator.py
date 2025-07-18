@@ -29,9 +29,9 @@ def calculate_SSR(pole_pairs, mm_s_max, transmission_ratio):
 
 def calculate_SOS(pole_pairs, mm_s_max, transmission_ratio):
     """Calculate increments (SOS) based on the given parameters."""
-    revolution_s = mm_to_rev(mm_s_max, transmission_ratio)
-    revolution_ms = revolution_s / 1000
-    inc = np.pow(2.0, 16) * pole_pairs * revolution_ms
+    revolution = mm_to_rev(mm_s_max, transmission_ratio)
+    print(f"Revolutions per second: {revolution}")
+    inc = np.pow(2.0, 16) * pole_pairs * revolution
     return inc
 
 def calculate_SCW(pole_pairs, mm_s_max, transmission_ratio):
@@ -79,7 +79,8 @@ def add_numerator_denominator_widgets():
     entry_denominator.grid(row=5, column=1)
     toggle_button.config(text="Switch to Ratio Mode")
     calc_button.grid(row=6, column=0, columnspan=2, pady=10)
-    result_label.grid(row=7, column=0, columnspan=2)
+    result_entry.grid(row=7, column=0, columnspan=2, sticky="ew", padx=5, pady=5)
+    
 
 def remove_numerator_denominator_widgets():
     """Remove numerator and denominator widgets from the GUI."""
@@ -89,7 +90,7 @@ def remove_numerator_denominator_widgets():
     label_denominator.grid_remove()
     toggle_button.config(text="Switch to Fraction Mode")
     calc_button.grid(row=5, column=0, columnspan=2, pady=10)
-    result_label.grid(row=6, column=0, columnspan=2)
+    result_entry.grid(row=6, column=0, columnspan=2)
 
 def add_transmission_widgets():
     """Add transmission widgets to the GUI."""
@@ -119,7 +120,7 @@ def toggle_mode():
         add_encoder_widgets()
         toggle_button.config(text="Switch to Transmission Ratio Mode")
         calc_button.grid(row=6, column=0, columnspan=2, pady=10)
-        result_label.grid(row=7, column=0, columnspan=2)
+        result_entry.grid(row=7, column=0, columnspan=2, sticky="ew", padx=5, pady=5)
     else:
         mode_var.set("transmission_ratio")
         remove_numerator_denominator_widgets()
@@ -127,7 +128,7 @@ def toggle_mode():
         add_transmission_widgets()
         toggle_button.config(text="Switch to Numerator/Denominator Mode")
         calc_button.grid(row=5, column=0, columnspan=2, pady=10)
-        result_label.grid(row=6, column=0, columnspan=2)
+        result_entry.grid(row=6, column=0, columnspan=2, sticky="ew", padx=5, pady=5)
 
 def update_speed_label(*args):
     if calc_mode_var.get() == "SSR" or calc_mode_var.get() == "SCW":
@@ -189,9 +190,12 @@ toggle_button.grid(row=8, column=0, columnspan=2, pady=5)
 calc_button = ttk.Button(root, text="Calculate", command=calculate)
 calc_button.grid(row=5, column=0, columnspan=2, pady=10)
 
+
 result_var = tk.StringVar()
-result_label = ttk.Label(root, textvariable=result_var)
-result_label.grid(row=6, column=0, columnspan=2)
+result_entry = ttk.Entry(root, textvariable=result_var, state="readonly", justify="center")
+result_entry.grid(row=6, column=0, columnspan=2, sticky="ew", padx=5, pady=5)
+
+
 
 root.mainloop()
 
