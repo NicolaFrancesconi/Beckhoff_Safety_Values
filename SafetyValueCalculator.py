@@ -27,9 +27,9 @@ def calculate_SSR(pole_pairs, mm_s_max, transmission_ratio):
     inc_ms = 2.0 * np.pow(2.0, 16) * pole_pairs * revolution_ms
     return inc_ms
 
-def calculate_SOS(pole_pairs, mm_s_max, transmission_ratio):
+def calculate_SOS(pole_pairs, mm_max, transmission_ratio):
     """Calculate increments (SOS) based on the given parameters."""
-    revolution = mm_to_rev(mm_s_max, transmission_ratio)
+    revolution = mm_to_rev(mm_max, transmission_ratio)
     print(f"Revolutions per second: {revolution}")
     inc = np.pow(2.0, 16) * pole_pairs * revolution
     return inc
@@ -62,7 +62,8 @@ def calculate():
             result = calculate_SSR(pole_pairs, mm_s_max, transmission_ratio)
             result_var.set(f"SSR Increments/ms: {result:.2f}")
         elif calc_mode_var.get() == "SOS":
-            result = calculate_SOS(pole_pairs, mm_s_max, transmission_ratio)
+            mm_max = mm_s_max
+            result = calculate_SOS(pole_pairs, mm_max, transmission_ratio)
             result_var.set(f"SOS Increments: {result:.2f}")
         elif calc_mode_var.get() == "SCW":
             result = calculate_SCW(pole_pairs, mm_s_max, transmission_ratio)
