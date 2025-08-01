@@ -1,6 +1,12 @@
 # Beckhoff Safety Value Calculator
 
+<img width="426" height="270" alt="image" src="https://github.com/user-attachments/assets/c92b7735-e485-4049-a0f8-2a5ecb3149e8" /> <img width="424" height="269" alt="image" src="https://github.com/user-attachments/assets/54a9367b-96ab-4ced-b0ba-24912758aa01" />
+
+
+
+
 This Python application provides a graphical interface (Tkinter-based) to calculate safety-related values for Beckhoff AX5805/AX5806 TwinSAFE drive option cards. The calculations are based on the official Beckhoff documentation and are intended to assist engineers and technicians in configuring safety parameters for servo drives. For standard usage, simply download the [SafetyValueCalculator.exe](https://github.com/NicolaFrancesconi/Beckhoff_Safety_Values/blob/main/SafetyValueCalculator.exe) file and run it directly. The executable is ready to use, so there's no need to compile the source code unless you wish to modify or inspect it.
+
 
 ## Purpose
 
@@ -33,7 +39,7 @@ This document describes the mathematical relationships and safety function param
 1. Enter the number of motor pole pairs.
 2. Enter the maximum linear speed or displacement (in mm/s or mm).
 3. Choose the input mode:
-   - Enter the transmission ratio directly, or
+   - Enter the transmission ratio directly or
    - Enter the numerator, denominator, and encoder resolution (in bits).
 4. Select the desired calculation mode (SSR, SOS, or SCW).
 5. Click **Calculate** to view the result.
