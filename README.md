@@ -1,6 +1,6 @@
 # Beckhoff Safety Value Calculator
 
-This Python application provides a graphical interface (Tkinter-based) to calculate safety-related values for Beckhoff AX5805/AX5806 TwinSAFE drive option cards. The calculations are based on the official Beckhoff documentation and are intended to assist engineers and technicians in configuring safety parameters for servo drives.
+This Python application provides a graphical interface (Tkinter-based) to calculate safety-related values for Beckhoff AX5805/AX5806 TwinSAFE drive option cards. The calculations are based on the official Beckhoff documentation and are intended to assist engineers and technicians in configuring safety parameters for servo drives. For standard usage, simply download the [SafetyValueCalculator.exe](https://github.com/NicolaFrancesconi/Beckhoff_Safety_Values/blob/main/SafetyValueCalculator.exe) file and run it directly. The executable is ready to use, so there's no need to compile the source code unless you wish to modify or inspect it.
 
 ## Purpose
 
@@ -19,7 +19,6 @@ These values are derived from the **linear speed or displacement** of the axis c
   - Encoder-based ratio using numerator/denominator and encoder resolution
 - Allows selection of calculation mode: SSR, SOS, or SCW
 - Dynamically updates the interface based on selected input mode
-- Provides real-time results with error handling
 
 ## Reference
 
